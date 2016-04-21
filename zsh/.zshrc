@@ -55,28 +55,8 @@ alias xopen="xdg-open"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias ocaml="ledit ocaml"
-$ dentaku () {echo $(($@))}
-$ py-c () {python -c "print($@)"}
 
-# zsh-syntax-highlighting
-if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#load local settings
+if [ -f ~/.zsh.d/local.zsh ]; then
+    source ~/.zsh.d/local.zsh
 fi
-
-#node
-if [ -s ~/.nvm/nvm.sh ]; then
-source ~/.nvm/nvm.sh
-nvm use v0.10.22 > /dev/null 2>&1
-export NODE_PATH=${NVM_PATH}_modules
-fi
-
-#byobu
-#if [ $SHLVL -eq 1 -a `which byobu` ];then
-# byobu
-#fi
-
-# OPAM configuration
-. /home/wataru/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config -env`
-
-[ -s "/home/wataru/.k/kvm/kvm.sh" ] && . "/home/wataru/.k/kvm/kvm.sh" # Load kvm
