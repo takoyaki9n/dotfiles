@@ -49,12 +49,7 @@ setopt transient_rprompt
 alias grep='grep --color=auto'
 
 # Alias
-alias rm="trash-put"
 alias ls='ls -F'
-alias xopen="xdg-open"
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
-alias ocaml="ledit ocaml"
 
 #load local settings
 if [ -f ~/.zsh.d/local.zsh ]; then
