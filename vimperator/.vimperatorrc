@@ -1,0 +1,58 @@
+"3.9 (created: 2015/02/15 15:49:05)
+
+" vim: set ft=vimperator:
+
+"============================
+" General
+"============================
+
+" 入力欄に自動フォーカスしない
+set focuscontent
+" ビジュアルベルを表示しない
+set visualbell
+highlight Bell display:none
+" :oなどでの補完候補をサーチエンジン、履歴に限定
+set complete=sl
+" Hintモードでアルファベット使用
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+" commandモードでIMEオフ
+#style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+noremap <silent> f :!fcitx-remote -c<cr>qf
+noremap <silent> F :!fcitx-remote -c<cr>qF
+
+"============================
+" Key mapping
+"============================
+
+" 新しいタブで開く
+noremap O :tabopen<Space>
+" google検索を手早くする
+noremap s :open<Space>google<Space>
+noremap S :tabopen<Space>google<Space>
+" 移動幅
+noremap j 3j
+noremap k 3k
+" タブ移動
+nnoremap h <C-p>
+nnoremap l <C-n>
+" 横移動
+nnoremap <C-h> <Left>
+nnoremap <C-l> <Right>
+" undo一覧から開く
+nnoremap U :undo<Space>
+let g:hint_tombloo_key = 'r'
+" インサートモード
+noremap i gi
+inoremap <C-a> <Ins><C-a><Ins>
+
+"============================
+" colorscheme
+"============================
+hi Hint font-family: Arial; font-size: 15px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #33cccc;
+hi HintElem color: gray; background-color: #a1e4e6;
+hi HintActive color: black; background-color: #ff8700;
+
+source! "_vimperatorrc.local"
+
+"読み込み完了メッセージ
+echo "vimperatorrc loaded."
