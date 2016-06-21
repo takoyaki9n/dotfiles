@@ -50,6 +50,7 @@ alias grep='grep --color=auto'
 
 # Alias
 alias ls='ls -F'
+alias allhist='history -E 1'
 
 #load local settings
 if [ -f ~/.zsh.d/local.zsh ]; then
