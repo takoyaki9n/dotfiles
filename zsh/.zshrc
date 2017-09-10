@@ -1,7 +1,3 @@
-# 参考:
-# http://webtech-walker.com/archive/2008/12/15101251.html
-# http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
-
 # encoding
 export LANG=ja_JP.UTF-8
 
@@ -53,5 +49,5 @@ RPROMPT='[%F{green}${vcs_info_msg_0_}%~%f]'
 # Alias
 alias ls='ls -F'
 
-#load local settings
+# local settings
 [[ -f ~/.zsh.d/local.zsh ]] && source ~/.zsh.d/local.zsh
