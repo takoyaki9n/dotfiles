@@ -37,14 +37,14 @@ bindkey '^S' history-incremental-pattern-search-forward
 # PROMPT
 autoload -Uz colors
 colors
-PROMPT="%K{green}%n@%m%(!,#,$)%k "
+[[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]] && PROMPT="%K{green}%n@%m%(!,#,$)%k " || PROMPT="%K{green}%n@localhost%(!,#,$)%k "
 PROMPT2="> "
 ## git PROMPT
 autoload -Uz vcs_info
 setopt prompt_subst
-zstyle ':vcs_info:*' formats "%b:"
+zstyle ':vcs_info:*' formats "%F{green}%b%f:"
 precmd () { vcs_info }
-RPROMPT='[%F{green}${vcs_info_msg_0_}%~%f]'
+RPROMPT='[${vcs_info_msg_0_}%F{green}%~%f]'
 
 # Alias
 alias ls='ls -F'
