@@ -3,6 +3,8 @@ export LANG=ja_JP.UTF-8
 
 # keybind
 bindkey -e
+bindkey "^F" forward-word
+bindkey "^B" backward-word
 
 # completion
 autoload -U compinit
