@@ -49,5 +49,10 @@ RPROMPT='[${vcs_info_msg_0_}%F{green}%~%f]'
 # Alias
 alias ls='ls -F'
 
+#functions
+function abspath() {
+    echo $(cd $(dirname $1) && pwd)/$(basename $1)
+}
+
 # local settings
 [[ -f ~/.zsh.d/local.zsh ]] && source ~/.zsh.d/local.zsh
