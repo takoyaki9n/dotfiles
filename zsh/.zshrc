@@ -39,7 +39,7 @@ bindkey '^S' history-incremental-pattern-search-forward
 # PROMPT
 autoload -Uz colors
 colors
-[[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]] && PROMPT="%K{green}%n@%m%(!,#,$)%k " || PROMPT="%K{green}%n%(!,#,$)%k "
+[[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]] && PROMPT="%n@%m%(!,#,$) " || PROMPT="%(!,#,$) "
 PROMPT2="> "
 ## git PROMPT
 autoload -Uz vcs_info
