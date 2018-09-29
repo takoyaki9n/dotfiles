@@ -4,7 +4,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug "zsh-users/zsh-completions"
 
-zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 
 zplug "zsh-users/zsh-history-substring-search"
 bindkey '^[[A' history-substring-search-up
