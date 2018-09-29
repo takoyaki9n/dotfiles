@@ -36,7 +36,7 @@ precmd () { vcs_info }
 RPROMPT='[${vcs_info_msg_0_}%F{green}%~%f]'
 
 # history
-HISTFILE=~/.histfile
+HISTFILE=$HOME/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 setopt share_history
@@ -44,24 +44,27 @@ setopt hist_reduce_blanks
 setopt hist_ignore_space
 
 # zplug
-source $ZSHRC_DIR/zplug.zsh
+. $ZSHRC_DIR/zplug.zsh
 
 # Alias
 alias ls='ls -F'
 
 #functions
-source $ZSHRC_DIR/functions.zsh
+. $ZSHRC_DIR/functions.zsh
+
+# env
+. $ZSHRC_DIR/env.zsh
 
 # OS specific settings
 if [[ $(uname) == 'Darwin' ]]; then
   # Mac
-  source $ZSHRC_DIR/mac.zsh
+  . $ZSHRC_DIR/mac.zsh
 elif [[ $(expr substr $(uname -s) 1 5) == 'Linux' ]]; then
   # Linux
-  source $ZSHRC_DIR/linux.zsh
+  . $ZSHRC_DIR/linux.zsh
 elif [[ $(expr substr $(uname -s) 1 10) == 'MINGW32_NT' ]]; then
   # Cygwin
 fi
 
 # local settings
-[[ -f ~/.zsh.d/local.zsh ]] && source ~/.zsh.d/local.zsh
+[[ -f $HOME/.zsh.d/local.zsh ]] && . $HOME/.zsh.d/local.zsh
