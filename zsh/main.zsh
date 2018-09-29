@@ -42,16 +42,9 @@ SAVEHIST=100000
 setopt share_history
 setopt hist_reduce_blanks
 setopt hist_ignore_space
-## history search
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
+
+# zplug
+source $ZSHRC_DIR/zplug.zsh
 
 # Alias
 alias ls='ls -F'
