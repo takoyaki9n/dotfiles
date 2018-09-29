@@ -51,10 +51,21 @@ RPROMPT='[${vcs_info_msg_0_}%F{green}%~%f]'
 # Alias
 alias ls='ls -F'
 
+local ZSHRC_DIR=`dirname $0`
+
 #functions
-function abspath() {
-    echo $(cd $(dirname $1) && pwd)/$(basename $1)
-}
+source $ZSHRC_DIR/functions.zsh
+
+# OS specific
+if [ "$(uname)" == 'Darwin' ]; then
+  # Mac
+  source $ZSHRC_DIR/mac.zsh
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  # Linux
+  source $ZSHRC_DIR/linux.zsh
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+  # Cygwin
+fi
 
 # local settings
 [[ -f ~/.zsh.d/local.zsh ]] && source ~/.zsh.d/local.zsh
